@@ -8,7 +8,7 @@ module PaperTrail
           config = PaperTrail::Rails.config
 
           user_options = nil
-          User.logger.silence do
+          Rails.logger.silence do
             puts 'index. user'
             user_options = filter.to_proc.(User.all)
             user_options.each.with_index do |user, i|
